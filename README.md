@@ -9,7 +9,7 @@ Amphan Tracker shows details about the current status of the cyclone and can say
 ![](https://raw.githubusercontent.com/iSumitBanik/Amphan-Tracker/master/static/img/1.png)
 ##### 2. Forecast Track
 ![](https://raw.githubusercontent.com/iSumitBanik/Amphan-Tracker/master/static/img/2.png)
-##### 3. Will Amohan hit my area?
+##### 3. Will Amphan hit my area?
 ![](https://raw.githubusercontent.com/iSumitBanik/Amphan-Tracker/master/static/img/3.png) 
 
 ![](https://raw.githubusercontent.com/iSumitBanik/Amphan-Tracker/master/static/img/4.png)
@@ -18,5 +18,8 @@ Amphan Tracker shows details about the current status of the cyclone and can say
 * [Bootstrap](https://getbootstrap.com/docs/4.5/) - CSS framework 🎨
 * [dJango](https://docs.djangoproject.com/) - Backend web framework ⚡
 
+### Sources
 
+1. [INDIA METEOROLOGICAL DEPARTMENT](https://mausam.imd.gov.in/)
+2. [Cyclocane](https://www.cyclocane.com/amphan-storm-tracker/)
 _________________________________________________________________________________________________________________________________________
