@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+  .landing_page {
+    display: block;
+    margin-top: 75px;
+    text-align: center;
+  }
+</style>
+<div class="container landing_page table-responsive">
+  <h4 style="font-weight: 500;">Will Amphan hit my area?</h4><br>
+  <button type="button" class="btn btn-primary" onclick="showMessage()">Check</button><br><br>
+  <p id="message"></p>
+  <div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-6">
+      <h5 style="font-weight: 600;">Spatial Rainfall Distribution</h5><br>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Distribution%</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table-success">
+            <td>Isolated</td>
+            <td>&lt;25%</td>
+          </tr>
+          <tr class="table-secondary">
+            <td>A few</td>
+            <td>26-50%</td>
+          </tr>
+          <tr class="table-warning">
+            <td>Many</td>
+            <td>51-75%</td>
+          </tr>
+          <tr class="table-danger">
+            <td>Most</td>
+            <td>76-100%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-sm-12 col-md-6 col-lg-6">
+      <h5 style="font-weight: 600;">Rainfall Amount</h5><br>
+
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Rainfall Amount(mm)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table-secondary">
+            <td>Heavy Rain</td>
+            <td>64.5-115.5</td>
+          </tr>
+          <tr class="table-warning">
+            <td>Very Heavy Rain</td>
+            <td>115.6-204.4</td>
+          </tr>
+          <tr class="table-danger">
+            <td>Extremely Heavy Rain</td>
+            <td>&gt;204.5</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <span style="float: right;font-size: 9px;">Source: India Meteorological Department</span>
+
+</div>
+<script>
+  const lat_coords = [15.2, 15.9, 17.1, 18.3, 20.8, 22.8, 24.8, 25.9]
+  const long_coords = [86.5, 86.7, 87.0, 87.3, 88.1, 88.8, 89.4, 89.8]
+
+  const showMessage = () => {
+
+    window.navigator.geolocation.getCurrentPosition(
+      success = (data) => {
+        let latitude = data.coords.latitude.toFixed(1)
+        let longitude = data.coords.longitude.toFixed(1)
+
+        console.log({ latitude, longitude })
+        if (lat_coords.includes(latitude) || long_coords.includes(longitude)) {
+          $('#message').html('<span style="color:red">WARNING, Cyclone might hit your area!</span>')
+
+        }
+        else {
+          $('#message').html('<span style="color:green">Cyclone might not hit your area!</span>')
+
+        }
+      },
+      error = (error) => {
+        $('#message').html('<span style="color:red">Allow Location Access!</span>')
+      })
+  }
+</script>
+
+{% endblock %}

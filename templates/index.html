@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+  .landing_page {
+    display: block;
+    margin-top:75px;
+  }
+</style>
+<div class="container landing_page  table-responsive">
+  <h5 style="font-weight: 600;">Amphan Current Status</h5><br>
+  <b><span>Current Wind Speed:&nbsp;</span></b><span>{{current_speed}} kmph</span><br><br>
+  <table class="table table-hover col-sm-12 col-md-12 col-lg-12 ">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Date/Time (IST)</th>
+        <th scope="col">Position (Lat/Long)</th>
+        <th scope="col">Max speed (kmph) </th>
+        <th scope="col">Category</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td>18.05.20/23:30</td>
+        <td>15.2/86.5</td>
+        <td>265</td>
+        <td>Super Cyclonic Storm</td>
+      </tr>
+      <tr>
+        <td>19.05.20/05:30</td>
+        <td>15.9/86.7</td>
+        <td>265</td>
+        <td>Super Cyclonic Storm</td>
+      </tr>
+      <tr>
+        <td>19.05.20/11:30</td>
+        <td>17.1/87.0</td>
+        <td>255</td>
+        <td>Super Cyclonic Storm</td>
+      </tr>
+      <tr>
+        <td>19.05.20/23:30</td>
+        <td>18.3/87.3</td>
+        <td>230</td>
+        <td>Extremely Severe Cyclonic Storm</td>
+      </tr>
+      <tr>
+        <td>20.05.20/11:30</td>
+        <td>20.8/88.1</td>
+        <td>210</td>
+        <td>Extremely Severe Cyclonic Storm</td>
+      </tr>
+      <tr>
+        <td>20.05.20/23:30</td>
+        <td>22.8/88.8</td>
+        <td>170</td>
+        <td>Very Severe Cyclonic Storm</td>
+      </tr>
+      <tr>
+        <td>21.05.20/11:30</td>
+        <td>24.8/89.4</td>
+        <td>100</td>
+        <td>Cyclonic Storm</td>
+      </tr>
+      <tr>
+        <td>21.05.20/17:30</td>
+        <td>25.9/89.8</td>
+        <td>60</td>
+        <td>Depression</td>
+      </tr>
+    </tbody>
+  </table>
+  <span style="float: right;font-size: 9px;">Source: India Meteorological Department</span>
+  
+</div>   
+{% endblock %}
